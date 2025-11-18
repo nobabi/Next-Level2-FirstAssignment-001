@@ -14,11 +14,8 @@ function fomatValue(value:string| number |boolean):string|number|boolean{
         return !value;
     }
 }
-// console.log(fomatValue('hello'));
-// console.log(fomatValue(5));
-// console.log(fomatValue(true));
 
-// Problem 1:
+// Problem 2:
 function getLength(value:string | any[]):number{
     if(typeof value==='string')
     {
@@ -30,8 +27,7 @@ function getLength(value:string | any[]):number{
     }
     return 0;
 }
-// console.log(getLength('typescript'));
-// console.log(getLength([10, 20, 30, 40]));
+ 
 
 //Problem 3:
 class Person{
@@ -46,7 +42,58 @@ class Person{
         return `Name: ${this.name}, Age ${this.age}`;
     }
 }
-//  const person1 = new Person('John Dos',30);
-//  console.log(`'${person1.getDetials()}'`);
-//  const person2 = new Person('Alice',25);
-//  console.log(`'${person2.getDetials()}'`);
+ 
+
+// Problem 4
+type Item= {
+    title :string;
+    rating: number;
+}
+function filterByRating(items: Item[]): Item[]
+{
+    return items.filter(item=>item.rating>=4)
+}
+const books = [
+
+{title:'Book A',rating: 4.5},
+{title:'Book B',rating: 3.2},
+{title:'Book C',rating: 5.0},
+]
+ 
+//Problem 05:
+
+type User={
+    id:number;
+    name:string;
+    email: string;
+    isActive:boolean;
+}
+const users = [
+  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+];
+function filterActiveUsers(users:User[]):User[] {
+    return users.filter(user=>user.isActive==true);
+}
+ 
+ 
+//Problem 6:
+interface Book {
+title :string
+author :string
+publishedYear :number
+isAvailable :boolean
+}
+function printBookDetails(book:Book):void{
+    const availability =book.isAvailable?'Yes':'No';
+    console.log(`Title: ${book.title}, Author: ${book.author}, Publish: ${book.publishedYear}, Available: ${availability}`);
+}
+const myBook: Book = {
+  title: 'The Great Gatsby',
+  author: 'F. Scott Fitzgerald',
+  publishedYear: 1925,
+  isAvailable: true,
+};
+
+ 
