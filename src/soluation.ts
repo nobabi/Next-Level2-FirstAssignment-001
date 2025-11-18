@@ -97,3 +97,39 @@ const myBook: Book = {
 };
 
  
+// Problem 7:
+function getUniqueValues(array1:(string|number)[],array2:(string |number)[])
+{
+    return [...new Set([...array1,...array2])];
+}
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+ 
+
+//Problem 8:
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number; 
+};
+
+// Function to calculate total price
+function calculateTotalPrice(products: Product[]): number {
+  return products
+    .map(product => {
+      const basePrice = product.price * product.quantity;
+      const discountRate = product.discount ? product.discount / 100 : 0;
+      return basePrice * (1 - discountRate);
+    })
+    .reduce((sum, current) => sum + current, 0);
+}
+
+// Sample Input
+const products: Product[] = [
+  { name: 'Pen', price: 10, quantity: 2 },
+  { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+  { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
+
+
